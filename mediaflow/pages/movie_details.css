@@ -1,0 +1,160 @@
+body{
+    font-family: 'Signika Negative';
+}
+.popup{
+    display: flex;
+}
+.image img{
+    width: 400px;
+    padding-right: 200px;
+    padding-left: 50px;
+    padding-top: 80px;
+}
+.popup-container{
+   background-image: linear-gradient(rgba(0, .0, .0, .9), rgba(0, .0, .0, .1)), url(/mediaflow/media/WhatsApp\ Image\ 2023-09-01\ at\ 1.22.15\ AM\ \(1\).jpeg); 
+   background-repeat: no-repeat;
+   position: fixed;
+   background-size: cover;
+}
+#card{
+    padding-top: 25px;
+}
+.right{
+    color: #fff;
+    
+}
+.EMPTY{
+    width: 500px;
+    height: 300px;
+
+}
+.cast{
+    display: flex;
+    margin: 10px 10px;
+}
+#castInfoContainer img{
+    width: 150px;
+    height: 150px;
+    padding: 10px;
+    border-radius: 5px;
+    margin-right: 20px;
+    
+}
+#castInfoContainer{
+    
+    display: flex;
+    overflow: hidden;
+    overflow-x: scroll;
+}
+
+#trailerContainer iframe{
+    width: 500px;
+    height: 300px;
+    margin-left: 650px;
+    margin-top: -1000px;
+    margin-bottom: 0;
+   
+}
+
+
+
+
+footer{
+    background-color: #E1D9D1 ;
+    width: 100vw;
+}
+.footer{
+    font-family: 'ABeeZee';
+    font-size: 30px;
+    color: rgb(0, 0, 26);
+    font-weight: lighter;
+    padding-left: 60px;
+}
+.logo{
+    font-family: 'ABeeZee';
+    font-size: 30px;
+    color: rgb(0, 0, 26);
+    font-weight: lighter;
+    padding-left: 0;
+}
+
+#hard {
+    display: flex;
+    justify-content: space-between;
+    
+}
+.span{
+    width: 40px;
+    background: lightgreen;
+    color: black;
+    height: 30px;
+    display: flex;
+}
+.tit{
+    margin-bottom: 2px;
+
+}
+#date{
+    padding-left: 20px;
+    padding-top: 0;
+    margin-top: 0;
+}
+
+
+footer a{
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+    font-size: 15px;
+    margin:20px;
+}
+.google{
+    width: 150px;
+    height: 40px;
+    padding-right: 4rem;
+    cursor: pointer;
+}
+.footer_small_container{
+    display: flex;
+    justify-content: space-between;
+    padding-top: 50px;
+}
+.icon_container{
+    padding-left: 30px;
+}
+.icons img{
+    width: 30px;
+    cursor: pointer;
+    padding-left: 0;
+    padding-right: 0;
+    margin-left: 0;
+    margin-right: 0;
+}
+
+.image{
+    padding-right: 15px;
+    padding-bottom: 30px;
+}
+.contact{
+    font-weight: bold;
+    margin-top: 0;
+    margin-bottom: 0;
+    font-family: 'lobster';
+}
+.copyright{
+    display: flex;
+    justify-content: center;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+/* .cast img{
+    width: 200px;
+    height: 180px;
+    margin-left: 80px;
+    border-radius: 100px;
+}
+.cast{
+    display: flex;
+    
+   
+} */

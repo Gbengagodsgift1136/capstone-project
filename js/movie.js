@@ -1,5 +1,11 @@
 //TMBD
 
+window.addEventListener("load", function () {
+    const loaderContainer = document.querySelector(".loader-container");
+    loaderContainer.style.display = "none";
+     document.body.classList.add("loaded"); 
+ });
+ 
 const API_KEY = "api_key=74cde2b11fd1edfaf29eea68eaf8a923";
 const BASE_URL = "https://api.themoviedb.org/3/";
 //const API_URL = BASE_URL + '/discover/movie?include_adult=false&include_video=false&language=en-US&page=1&sort_by=popularity.desc&'+API_KEY;
@@ -45,7 +51,7 @@ function showMovies(data) {
     </div>     
   </div>
         `
-        movieEl.setAttribute('href', `/mediaflow/pages/movie_details.html?id=${id}&title=${title}`)
+        movieEl.setAttribute('href', `/pages/movie_details.html?id=${id}&title=${title}`)
         main.appendChild(movieEl);
         movieEl.addEventListener('click', () => {
                 getMovieDetails(id)

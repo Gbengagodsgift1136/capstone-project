@@ -1,3 +1,9 @@
+window.addEventListener("load", function () {
+  const loaderContainer = document.querySelector(".loader-container");
+  loaderContainer.style.display = "none";
+   document.body.classList.add("loaded"); 
+});
+
 document.addEventListener("DOMContentLoaded", function () {
     // Your JavaScript code here
 
@@ -36,15 +42,18 @@ function fetchAndDisplayCastInfo(movieId) {
         const castMembers = castData.cast;
         const validCastMembers = castMembers.filter((member) => member.profile_path);
         const castInfoContainer = document.getElementById("castInfoContainer");
+        
         validCastMembers.forEach((member) => {
           const characterName = member.character;
           const originalName = member.name;
           const profilePath = IMG_URL + member.profile_path;
           const castMemberHTML = `
+          
             <div class="cast-member">
               <img src="${profilePath}" alt="${characterName}">
-              <p class="character-name">Character: ${characterName}</p>
-              <p class="original-name">Original Name: ${originalName}</p>
+              <p class="original-name">Actor: ${originalName}</p>
+              <p class="character-name">as: ${characterName}</p>
+              
             </div>
           `;
           castInfoContainer.innerHTML += castMemberHTML;
@@ -55,59 +64,15 @@ function fetchAndDisplayCastInfo(movieId) {
       });
   }
   fetchAndDisplayCastInfo(movie_id);
-
-
-// ... Your existing code ...
-
-// // Function to fetch trailers for a movie
-// function fetchTrailers(movieId) {
-//     const TRAILER_URL = BASE_URL + `movie/${movieId}/videos` + API_KEY;
-  
-//     fetch(TRAILER_URL)
-//       .then((res) => res.json())
-//       .then((trailerData) => {
-//         // Access the list of videos
-//         const videos = trailerData.results;
-  
-//         // Get the container where you want to display the trailer
-//         const trailerContainer = document.getElementById("trailerContainer");
-  
-//         // Find the first YouTube trailer in the list
-//         const youtubeVideo = videos.find((video) => video.site === "YouTube");
-  
-//         if (youtubeVideo) {
-//           const videoKey = youtubeVideo.key;
-  
-//           // Create an iframe to embed the YouTube video
-//            const iframe = document.createElement("iframe");
-//            iframe.src = `https://www.youtube.com/embed/${videoKey}`;
-//            iframe.allowFullscreen = true;
-  
-//           // Append the iframe to the trailerContainer
-//          trailerContainer.appendChild(iframe);
-        
-//         }
-//       })
-//       .catch((error) => {
-//         console.error('Error fetching trailer data:', error);
-//       });
-//   }
-  
-//   // Call the function to fetch trailers and display the embedded trailer
-//   fetchTrailers(movie_id);
-  
-
-
-  
-
 function showDetails(card) {
     main.innerHTML = '';
-    const { title, poster_path, vote_average, release_date, id, original_language, overview,tagline,genres} = card;
+    const { title, poster_path, vote_average, release_date, id, original_language, overview,tagline,genres,backdrop_path} = card;
     const movieEl = document.createElement('div');
     movieEl.classList.add('movie');
     movieEl.style.background=  `linear-gradient(rgba(0, .0, .0, .9), rgba(0, .0, .0, .1)), url(${IMG_URL+poster_path})`
     movieEl.style.backgroundRepeat= `no-repeat`
     movieEl.style.backgroundSize= `cover`
+    movieEl.style.header = `${backdrop_path}`;
      console.log(IMG_URL + poster_path);
     movieEl.innerHTML = `
      <div class="popup_container">

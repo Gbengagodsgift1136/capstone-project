@@ -1,11 +1,9 @@
 //TMBD
-
-/*window.addEventListener("load", function () {
+window.addEventListener("load", function () {
    const loaderContainer = document.querySelector(".loader-container");
    loaderContainer.style.display = "none";
     document.body.classList.add("loaded"); 
 });
-*/
 
 const API_KEY = "api_key=74cde2b11fd1edfaf29eea68eaf8a923";
 const BASE_URL = "https://api.themoviedb.org/3/";

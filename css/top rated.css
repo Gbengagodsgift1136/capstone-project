@@ -5,6 +5,32 @@ body{
     background-color: #2E1114;
     margin: 0;
 }
+
+.loader-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  
+  .loader {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 3px solid #fff;
+    border-top-color: blue;
+    animation: spin 1s infinite linear;
+  }
+  
+  @keyframes spin {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+  
 header{
     padding: 1rem;
     display: flex;
@@ -25,7 +51,7 @@ header{
     color: rgb(255, 255, 255);
     font-size: 30px;
     font-weight: lighter;
-    margin-left: -340px;
+    margin-left: -280px;
 }
 
 .menu{
@@ -76,6 +102,9 @@ main{
     border-radius: 5px;
     background: rgba(0, 0, 0, 0.5);
     color: rgb(192, 186, 186);
+}
+.movie:hover{
+    transform: scale(1.1);
 }
 .movie img{
     width: 100%;
@@ -180,17 +209,31 @@ button {
 footer{
     background-color: #E1D9D1 ;
 }
+.footer-container{
+    width: 100dw;
+
+}
+.container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 10px;
+}
+.icons{
+    margin-right: 50px;
+    margin-top: 10px;
+}
 .footer{
     font-family: 'ABeeZee';
     font-size: 30px;
-    color: rgb(0, 0, 26);
+    color: black;
     font-weight: lighter;
     padding-left: 50px;
 }
-.logo{
+.logo {
     font-family: 'ABeeZee';
     font-size: 30px;
-    color: rgb(0, 0, 26);
+    color: black;
     font-weight: lighter;
     padding-left: 0;
 }

@@ -19,7 +19,62 @@
             <a class="pages" href="/index.html">Home</a>
             <a class="pages" href="/pages/Upcoming movies.html">Upcoming</a>
             <a class="pages" href="/pages/Top rated.html">Top-rated</a>
+            <div class="dropdown">
+                <a href class="pages">sort</button>
+                <div class="dropdown-content">
+                    <a href="/pages/action.html">Action</a>
+                    <a href="/pages/horror.html">Horror</a>
+                    <a href="/pages/thriller.html">Thriller</a>
+                    <a href="/pages/romance.html">Romance</a>
+                    <a href="/pages/animation.html">Animations</a>
+                    <a href="/pages/adventure.html">Adventure</a>
+                </div>
+            </div>
         </div>
+        <style>
+            /* Style for the dropdown container */
+            .dropdown {
+                position: relative;
+                display: inline-block;
+            }
+    
+            /* Style for the button that triggers the dropdown */
+            .dropbtn {
+                /* background-color: #4CAF50; */
+                color: white;
+                padding: 12px;
+                border: none;
+                cursor: pointer;
+            }
+    
+            /* Style for the dropdown content */
+            .dropdown-content {
+                display: none;
+                position: absolute;
+                background-color: #f9f9f9;
+                min-width: 160px;
+                box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+                z-index: 1;
+            }
+    
+            /* Style for the individual dropdown items */
+            .dropdown-content a {
+                color: black;
+                padding: 12px 16px;
+                text-decoration: none;
+                display: block;
+            }
+    
+            /* Change color on hover for dropdown items */
+            .dropdown-content a:hover {
+                background-color: #f1f1f1;
+            }
+    
+            /* Show the dropdown content when hovering over the dropdown container */
+            .dropdown:hover .dropdown-content {
+                display: block;
+            }
+        </style>
         <form id="form">
             <input type="text" placeholder="search movie title" id="search" class="search">
         </form>

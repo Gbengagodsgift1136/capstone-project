@@ -1,20 +1,14 @@
-//TMBD
-window.addEventListener("load", function () {
-   const loaderContainer = document.querySelector(".loader-container");
-   loaderContainer.style.display = "none";
-    document.body.classList.add("loaded"); 
-});
-
 const API_KEY = "api_key=74cde2b11fd1edfaf29eea68eaf8a923";
 const BASE_URL = "https://api.themoviedb.org/3/";
-const API_URL = BASE_URL + "/discover/movie?include_adult=false&include_video=false&language=en-US&page=1&sort_by=popularity.desc&"+API_KEY;
-const IMG_URL = 'https://image.tmdb.org/t/p/w500';
-const TRAILER_PATH = "https://api.themoviedb.org/3/movie/157336/videos?api_key=0f7025d59c8d6493cdd89fe59d178782";
+//const API_URL = BASE_URL + '/discover/tv?include_adult=false&language=en-US&page=1&sort_by=popularity.desc&'+API_KEY;
+const IMG_URL = 'https://image.tmdb.org/t/p/w500/';
+const API_URL = BASE_URL + '/discover/movie?api_key=74cde2b11fd1edfaf29eea68eaf8a923&language=pt-BR&page=1&with_genres=12'
 const searchURL = BASE_URL + '/search/movie?'+ API_KEY;
 const main = document.getElementById('main');
-const form = document.getElementById('form')
-const search = document.getElementById('search')
+const form = document.getElementById('form');
+const search = document.getElementById('search');
 getMovies(API_URL);
+
 function add_click_effect_to_card (card) {
     card.forEach(card =>{
         card.addEventListener('click', () => show_popup(card))
@@ -52,8 +46,10 @@ function showMovies(data) {
         movieEl.addEventListener('click', () => {
                 getMovieDetails(id)
         })
+
 })
- function getclassbyrate(vote) {
+
+    function getclassbyrate(vote) {
     if (vote >= 8) {
         return 'green'
     } else if (vote >= 5) {
@@ -62,6 +58,11 @@ function showMovies(data) {
         return 'red'
     }
    }
+
+//console.log (getColor)
+   
+
+  
 form.addEventListener('submit', (e) => {
   e.preventDefault();
   const searchTerm = search.value
@@ -90,4 +91,3 @@ function getMovieDetails(id){
         })
         .catch(err => console.error(err));
 }
-

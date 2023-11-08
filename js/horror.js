@@ -1,20 +1,26 @@
 //TMBD
-window.addEventListener("load", function () {
-   const loaderContainer = document.querySelector(".loader-container");
-   loaderContainer.style.display = "none";
-    document.body.classList.add("loaded"); 
-});
 
+// const API_KEY = "api_key=74cde2b11fd1edfaf29eea68eaf8a923";
+// const BASE_URL = "https://api.themoviedb.org/3/";
+// const API_URL = BASE_URL + '/discover/tv?include_adult=false&language=en-US&page=1&sort_by=popularity.desc&'+API_KEY;
+// const IMG_URL = 'https://image.tmdb.org/t/p/w500/';
+
+// const searchURL = BASE_URL + '/search/movie?'+ API_KEY;
+// const main = document.getElementById('main');
+// const form = document.getElementById('form');
+// const search = document.getElementById('search');
+// getMovies(API_URL);
 const API_KEY = "api_key=74cde2b11fd1edfaf29eea68eaf8a923";
 const BASE_URL = "https://api.themoviedb.org/3/";
-const API_URL = BASE_URL + "/discover/movie?include_adult=false&include_video=false&language=en-US&page=1&sort_by=popularity.desc&"+API_KEY;
-const IMG_URL = 'https://image.tmdb.org/t/p/w500';
-const TRAILER_PATH = "https://api.themoviedb.org/3/movie/157336/videos?api_key=0f7025d59c8d6493cdd89fe59d178782";
+//const API_URL = BASE_URL + '/discover/tv?include_adult=false&language=en-US&page=1&sort_by=popularity.desc&'+API_KEY;
+const IMG_URL = 'https://image.tmdb.org/t/p/w500/';
+const API_URL = BASE_URL + '/discover/movie?api_key=74cde2b11fd1edfaf29eea68eaf8a923&with_genres=27'
 const searchURL = BASE_URL + '/search/movie?'+ API_KEY;
 const main = document.getElementById('main');
-const form = document.getElementById('form')
-const search = document.getElementById('search')
+const form = document.getElementById('form');
+const search = document.getElementById('search');
 getMovies(API_URL);
+
 function add_click_effect_to_card (card) {
     card.forEach(card =>{
         card.addEventListener('click', () => show_popup(card))
@@ -52,8 +58,22 @@ function showMovies(data) {
         movieEl.addEventListener('click', () => {
                 getMovieDetails(id)
         })
+       /* const posterImage = document.getElementById("poster-image");
+const popup = document.getElementById("popup");
+const closePopup = document.getElementById("close-popup");
+
+poster-containerImg.addEventListener("click", () => {
+    popup.style.display = "block";
+});
+
+closePopup.addEventListener("click", () => {
+    popup.style.display = "none";
+});*/
+
+
 })
- function getclassbyrate(vote) {
+
+    function getclassbyrate(vote) {
     if (vote >= 8) {
         return 'green'
     } else if (vote >= 5) {
@@ -62,6 +82,8 @@ function showMovies(data) {
         return 'red'
     }
    }
+
+  
 form.addEventListener('submit', (e) => {
   e.preventDefault();
   const searchTerm = search.value
@@ -80,14 +102,11 @@ function getMovieDetails(id){
           Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI3NGNkZTJiMTFmZDFlZGZhZjI5ZWVhNjhlYWY4YTkyMyIsInN1YiI6IjY1MDA1N2IzZWZlYTdhMDEzN2QyNjBiYSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.-nPsjMn8Gh-cd2K7SSf0X-RNcAJHUgKvr4wZ58IL6jg'
         }
       };
-      
       fetch(`https://api.themoviedb.org/3/movie/${id}?language=en-US`, options)
         .then(response => response.json())
         .then(data =>{
             console.log(data)
             // let d = document.getElementById("duration")
-            
         })
         .catch(err => console.error(err));
 }
-
